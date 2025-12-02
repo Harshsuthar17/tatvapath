@@ -1,415 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tatvapath: Path of Essence - UPSC Coaching</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tatvapath: Path of Essence - UPSC Resources</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- Color Variables & Reset --- */
+        :root {
+            --primary-blue: #0077b6; /* Professional Blue */
+            --gold: #c29d60; /* Elegant Gold Accent */
+            --dark-text: #2c3e50; /* Deep Navy/Charcoal */
+            --bg-light: #f7f9fb; /* Clean Light Background */
+            --card-bg: #ffffff;
+            --shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Smoother Shadow */
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--dark-text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background: var(--card-bg);
+            padding: 15px 5%;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 50px; 
+            width: auto;
+        }
+
+        .brand-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+        
+        /* --- Hero Section --- */
+        .hero {
+            text-align: center;
+            padding: 70px 20px;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1516534775068-ba3e7458af70?auto=format&fit=crop&w=1920&q=80'); /* Library/Study image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            margin-bottom: 5px;
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .youtube-btn {
+            background-color: #ff0000; /* YouTube Red */
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .youtube-btn:hover {
+            background-color: #cc0000;
+            transform: translateY(-2px);
+        }
+
+        /* --- Subject Grid Section --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            color: var(--primary-blue);
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            border-bottom: 3px solid var(--gold);
+            padding-bottom: 10px;
+            display: block;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .subject-card {
+            background: var(--card-bg);
+            border: 1px solid #e0e0e0;
+            border-radius: var(--border-radius);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth Transition */
+            cursor: pointer;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .icon-box {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            /* Use Specific Colors for better look */
+        }
+        
+        /* Specific Icon Colors for visual appeal */
+        .polity-icon { color: #3498db; }
+        .economy-icon { color: #27ae60; }
+        .env-icon { color: #f39c12; }
+        .sci-icon { color: #9b59b6; }
+        .geo-icon { color: #e74c3c; }
+        .history-icon { color: #8c5d33; }
+        .lit-icon { color: var(--gold); }
 
 
-    <style>
-        :root {
-            /* Palette based on your logo */
-            --primary-gold: #c59d5f; 
-            --dark-gold: #8a6a38;
-            --bg-parchment: #fdf5e6; /* Old paper color */
-            --bg-texture: #f4ebd0;
-            --text-dark: #2c241b;
-            --white: #ffffff;
-            --card-shadow: 0 10px 20px rgba(44, 36, 27, 0.1);
-        }
+        .subject-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark-text);
+        }
+        
+        .subject-card p {
+            font-size: 0.95rem;
+            color: #7f8c8d;
+        }
 
+        .download-btn {
+            display: block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: var(--primary-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        .download-btn:hover {
+            background-color: #005f96;
+        }
 
+        /* --- Footer --- */
+        footer {
+            background-color: var(--dark-text);
+            color: var(--bg-light);
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 50px;
+        }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-parchment);
-            background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png"); /* Subtle paper texture */
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+        .quote {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
 
-
-        /* --- Header & Navigation --- */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 1rem 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-
-        .logo-img {
-            height: 60px; /* Adjust based on your logo file */
-            width: auto;
-        }
-
-
-        .brand-name {
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            color: var(--dark-gold);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-
-        .nav-btn {
-            background-color: #ff0000; /* YouTube Red */
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-
-        .nav-btn:hover {
-            background-color: #cc0000;
-            transform: translateY(-2px);
-        }
-
-
-        /* --- Hero Section --- */
-        .hero {
-            text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(rgba(44, 36, 27, 0.8), rgba(44, 36, 27, 0.8)), url('https://images.unsplash.com/photo-1507842217121-9e93c8aaf27c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: var(--white);
-        }
-
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            color: var(--primary-gold);
-        }
-
-
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto 30px;
-            font-style: italic;
-        }
-
-
-        .scroll-down {
-            color: var(--primary-gold);
-            font-size: 2rem;
-            animation: bounce 2s infinite;
-        }
-
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-10px);}
-            60% {transform: translateY(-5px);}
-        }
-
-
-        /* --- Subject Grid Section --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-
-        .section-title {
-            text-align: center;
-            font-family: 'Cinzel', serif;
-            color: var(--dark-gold);
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            position: relative;
-        }
-
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 3px;
-            background: var(--primary-gold);
-            margin: 10px auto;
-        }
-
-
-        .subject-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-
-        .subject-card {
-            background: var(--white);
-            border: 1px solid #e0d5b5;
-            border-radius: 8px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: var(--card-shadow);
-            position: relative;
-            overflow: hidden;
-        }
-
-
-        .subject-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-gold);
-            box-shadow: 0 15px 30px rgba(197, 157, 95, 0.2);
-        }
-
-
-        .subject-card::before {
-            content: ''; /* Decorative line like a book spine */
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 5px;
-            background: var(--primary-gold);
-        }
-
-
-        .icon-box {
-            font-size: 2.5rem;
-            color: var(--dark-gold);
-            margin-bottom: 20px;
-        }
-
-
-        .subject-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--text-dark);
-        }
-
-
-        .download-btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 25px;
-            background-color: var(--text-dark);
-            color: var(--primary-gold);
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            border: 1px solid var(--text-dark);
-            transition: 0.3s;
-        }
-
-
-        .download-btn:hover {
-            background-color: var(--primary-gold);
-            color: var(--white);
-            border-color: var(--primary-gold);
-        }
-
-
-        /* --- Footer --- */
-        footer {
-            background-color: var(--text-dark);
-            color: var(--bg-parchment);
-            text-align: center;
-            padding: 60px 20px;
-            position: relative;
-        }
-
-
-        .quote-box {
-            border: 2px solid var(--primary-gold);
-            padding: 30px;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            background: rgba(255,255,255,0.05);
-        }
-
-
-        .quote {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: var(--primary-gold);
-            font-style: italic;
-        }
-        
-        .quote-author {
-            margin-top: 10px;
-            font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-        }
-
-
-        .social-links {
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            color: var(--bg-parchment);
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: 0.3s;
-        }
-
-
-        .social-links a:hover {
-            color: var(--primary-gold);
-        }
-
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .brand-name { display: none; } /* Hide text on small screens, keep logo */
-            header { justify-content: space-between; }
-        }
-    </style>
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2rem; }
+            .section-title { font-size: 1.8rem; }
+        }
+    </style>
 </head>
 <body>
 
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Tatvapath Logo" class="logo-img"> 
+            <div class="brand-name">TATVAPATH</div>
+        </div>
+        <a href="https://youtube.com/@tatvapath2617?si=LXnkFYrmGiMXWT0g" target="_blank" class="youtube-btn">
+            <i class="fab fa-youtube"></i> YouTube Channel
+        </a>
+    </header>
 
-    <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="Tatvapath Logo" class="logo-img"> 
-            <div class="brand-name">Tatvapath</div>
-        </div>
-        <a href="https://youtube.com/@tatvapath2617?si=LXnkFYrmGiMXWT0g" target="_blank" class="nav-btn">
-            <i class="fab fa-youtube"></i> Visit Channel
-        </a>
-    </header>
+    <section class="hero">
+        <h1>Path of Essence</h1>
+        <p>Achieve Your UPSC Goals with Premium & Organized Study Resources.</p>
+    </section>
 
+    <section class="container">
+        <h2 class="section-title">Essential Study Material & Resources</h2>
+        
+        <div class="subject-grid">
 
-    <section class="hero">
-        <h1>Tatvapath</h1>
-        <p>Path of Essence</p>
-        <div class="scroll-down">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
+            <div class="subject-card">
+                <div class="icon-box polity-icon"><i class="fas fa-gavel"></i></div>
+                <h3>Polity</h3>
+                <p>Constitutional Framework, Governance, and Rights Analysis.</p>
+                <a href="#" class="download-btn">Open Resource Folder <i class="fas fa-folder-open"></i></a>
+            </div>
 
+            <div class="subject-card">
+                <div class="icon-box economy-icon"><i class="fas fa-chart-bar"></i></div>
+                <h3>Economy</h3>
+                <p>Macroeconomics, Budgeting, and Development Theories.</p>
+                <a href="#" class="download-btn">Open Resource Folder <i class="fas fa-folder-open"></i></a>
+            </div>
 
-    <section class="container">
-        <h2 class="section-title">Study Materials & PDFs</h2>
-        
-        <div class="subject-grid">
+            <div class="subject-card">
+                <div class="icon-box env-icon"><i class="fas fa-leaf"></i></div>
+                <h3>Environment</h3>
+                <p>Ecology, Climate Change, and Conservation Initiatives.</p>
+                <a href="#" class="download-btn">Open Resource Folder <i class="fas fa-folder-open"></i></a>
+            </div>
 
+            <div class="subject-card">
+                <div class="icon-box sci-icon"><i class="fas fa-satellite-dish"></i></div>
+                <h3>Sci & Tech</h3>
+                <p>Space, Defence, Nanotechnology, and IT Developments.</p>
+                <a href="#" class="download-btn">Open Resource Folder <i class="fas fa-folder-open"></i></a>
+            </div>
 
-            <div class="subject-card">
-                <div class="icon-box"><i class="fas fa-landmark"></i></div>
-                <h3>Polity</h3>
-                <p>Constitution, Governance, and Social Justice materials.</p>
-                <a href="#" class="download-btn">Download PDF <i class="fas fa-download"></i></a>
-            </div>
+            <div class="subject-card">
+                <div class="icon-box geo-icon"><i class="fas fa-globe-asia"></i></div>
+                <h3>Geography</h3>
+                <p>Physical, World, and Indian Geography with Mapping.</p>
+                <a href="#" class="download-btn">Open Resource Folder <i class="fas fa-folder-open"></i></a>
+            </div>
 
+            <div class="subject-card">
+                <div class="icon-box history-icon"><i class="fas fa-university"></i></div>
+                <h3>History</h3>
+                <p>Art & Culture, Ancient, Medieval, and Modern India.</p>
+                <a href="#" class="download-btn">Open Resource Folder <i class="fas fa-folder-open"></i></a>
+            </div>
 
-            <div class="subject-card">
-                <div class="icon-box"><i class="fas fa-chart-line"></i></div>
-                <h3>Economy</h3>
-                <p>Macroeconomics, Budgeting, and Development notes.</p>
-                <a href="#" class="download-btn">Download PDF <i class="fas fa-download"></i></a>
-            </div>
+            <div class="subject-card">
+                <div class="icon-box lit-icon"><i class="fas fa-book-open"></i></div>
+                <h3>Gujarati Literature</h3>
+                <p>Optional Subject Comprehensive Study Material.</p>
+                <a href="#" class="download-btn">Open Resource Folder <i class="fas fa-folder-open"></i></a>
+            </div>
 
+        </div>
+    </section>
 
-            <div class="subject-card">
-                <div class="icon-box"><i class="fas fa-leaf"></i></div>
-                <h3>Environment</h3>
-                <p>Ecology, Biodiversity, and Climate Change.</p>
-                <a href="#" class="download-btn">Download PDF <i class="fas fa-download"></i></a>
-            </div>
-
-
-            <div class="subject-card">
-                <div class="icon-box"><i class="fas fa-rocket"></i></div>
-                <h3>Sci & Tech</h3>
-                <p>Recent developments, Space, and Biotech.</p>
-                <a href="#" class="download-btn">Download PDF <i class="fas fa-download"></i></a>
-            </div>
-
-
-            <div class="subject-card">
-                <div class="icon-box"><i class="fas fa-globe-asia"></i></div>
-                <h3>Geography</h3>
-                <p>Physical, World, and Indian Geography.</p>
-                <a href="#" class="download-btn">Download PDF <i class="fas fa-download"></i></a>
-            </div>
-
-
-            <div class="subject-card">
-                <div class="icon-box"><i class="fas fa-monument"></i></div>
-                <h3>History</h3>
-                <p>Ancient, Medieval, Modern India, and Culture.</p>
-                <a href="#" class="download-btn">Download PDF <i class="fas fa-download"></i></a>
-            </div>
-
-
-            <div class="subject-card" style="border-color: var(--primary-gold); background-color: #fffbf2;">
-                <div class="icon-box"><i class="fas fa-book-open"></i></div>
-                <h3>Gujarati Literature</h3>
-                <p>Optional Subject comprehensive notes.</p>
-                <a href="https://drive.google.com/file/d/13608Ng1Qjb8Gvq4Gh3q_AHj5zKK6euTx/view?usp=drivesdk" class="download-btn">Download PDF <i class="fas fa-download"></i></a>
-            </div>
-
-
-        </div>
-    </section>
-
-
-    <footer>
-        <div class="quote-box">
-            <div class="quote">"You can do it, you will do it"</div>
-            <div class="quote-author">- Tatvapath</div>
-        </div>
-
-
-        <div class="social-links">
-            <a href="https://drive.google.com/file/d/1KixlrJAOMEeM4eqsXmNKth_aldGZPabf/view?usp=drivesdk" target="_blank"><i class="fab fa-youtube"></i></a>
-            </div>
-        
-        <br>
-        <p>&copy; 2024 Tatvapath Coaching. All Rights Reserved.</p>
-    </footer>
-
+    <footer>
+        <div class="quote">"You can do it, you will do it"</div>
+        <p>&copy; 2024 Tatvapath Coaching. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
-
-
-
-
